@@ -7,6 +7,11 @@ const openAiApiKey = process.env.OPENAI_API_KEY;  // Asegúrate de tener tu clav
 // Middleware para procesar JSON
 app.use(express.json());
 
+// Ruta para la página principal
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la API WP Connector');
+});
+
 // Ruta para recibir solicitudes desde el plugin
 app.post('/process-command', async (req, res) => {
     const { command } = req.body;  // Supongo que el plugin envía un comando
