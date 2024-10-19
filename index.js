@@ -21,17 +21,17 @@ app.post('/process-command', async (req, res) => {
             'https://api.openai.com/v1/completions', // URL de OpenAI
             {
                 prompt: command,  // El comando se envía como 'prompt'
-                max_tokens: 100  // Por ejemplo, configuramos 100 tokens
+                max_tokens: 100  // Configura la cantidad de tokens según tu necesidad
             },
             {
                 headers: {
-                    'Authorization': `Bearer ${openAiApiKey}`,  // Tu clave API
+                    'Authorization': `Bearer ${openAiApiKey}`,  // Tu clave API de OpenAI
                     'Content-Type': 'application/json'
                 }
             }
         );
 
-        // Devuelves el resultado al plugin de WordPress
+        // Devuelve el resultado al plugin de WordPress
         res.json(response.data);
 
     } catch (error) {
