@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const openAiApiKey = process.env.OPENAI_API_KEY;
 
 // Middleware para procesar JSON
 app.use(express.json());
